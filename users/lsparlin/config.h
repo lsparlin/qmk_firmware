@@ -1,0 +1,7 @@
+
+#define ONESHOT_TAP_TOGGLE 3
+
+#ifdef LEADER_ENABLE
+#  define LEADER_TIMEOUT 300
+#  define LEADER_PER_KEY_TIMING
+#endif // LEADER_ENABLE
