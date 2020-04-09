@@ -11,4 +11,4 @@ ifeq ($(strip $(MACROS_ENABLE)), yes)
         OPT_DEFS += -DEMOJI_MACROS_ENABLE
     endif
 
-endif // MACROS_ENABLE
+endif # MACROS_ENABLE
