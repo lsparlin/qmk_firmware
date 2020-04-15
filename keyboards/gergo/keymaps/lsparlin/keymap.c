@@ -71,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Keymap 2: Motion/Function layer *
  * ,-------------------------------------------.                         ,-------------------------------------------.
- * | LEAD   | BR_DN| BR_UP|      |      |      |                         |      | PGDN | PGUP |      |      | POWER  |
+ * |        | BR_DN| BR_UP|      |      |      |                         |      | PGDN | PGUP |      |      |        |
  * |--------+------+------+------+------+------|------.           .------|------+------+------+------+------+--------|
  * |        |  F1  | F2   | F3   | F4   | F5   | F6   |           |      | LEFT | DOWN |  UP  | RIGHT|VolDn | VolUp  |
  * |--------+------+------+------+------+------|------|           |------|------+------+------+------+------+--------|
@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_MOTN] = LAYOUT_gergo(
- KC_LEAD, KC_BRMD,	KC_BRMU, KC_TRNS, KC_TRNS, KC_TRNS,                                             KC_TRNS, KC_PGDN, KC_PGUP, KC_TRNS, KC_TRNS, KC_POWER, 
+ KC_TRNS, KC_BRMD,	KC_BRMU, KC_TRNS, KC_TRNS, KC_TRNS,                                            KC_TRNS, KC_PGDN, KC_PGUP, KC_TRNS, KC_TRNS, KC_TRNS, 
             KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6,                            KC_PGUP, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_VOLD, KC_VOLU, 
         KC_TRNS, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_TRNS,           KC_PGUP, KC_TRNS, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_MUTE, KC_TRNS, 
                                    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,           KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
@@ -152,29 +152,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
  */
 
-LEADER_EXTERNS();
 // Runs constantly in the background, in a loop.
 void matrix_scan_user(void) {
     biton32(layer_state);
-
-    LEADER_DICTIONARY() {
-      leading = false;
-      leader_end();
-
-      SEQ_TWO_KEYS(KC_E, KC_SPC) {
-        SEND_STRING(UC_THUMBUP);
-      }
-
-      SEQ_TWO_KEYS(KC_E, KC_F) {
-        SEND_STRING(UC_SMILE);
-      }
-
-      SEQ_THREE_KEYS(KC_E, KC_D, KC_D) {
-        SEND_STRING(UC_GRINNING);
-      }
-
-      SEQ_TWO_KEYS(KC_E, KC_D) {
-        SEND_STRING(UC_FROWN);
-      }
-    }
 };
