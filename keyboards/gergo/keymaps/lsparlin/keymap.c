@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  KC_TILD, KC_EXLM, KC_AT,  TD(TD_CBR), KC_RCBR, KC_PIPE,                                             KC_TRNS, KC_AMPR, KC_TRNS, KC_TRNS, KC_EQL,  KC_UNDS,
   KC_TRNS, KC_HASH, KC_DLR, TD(TD_PRN), KC_RPRN, KC_GRV, KC_TRNS,                           KC_PGUP, KC_PLUS, KC_MINS, KC_SLSH, KC_ASTR, KC_PERC, KC_DQUO,
  KC_TRNS, KC_PERC, KC_CIRC,TD(TD_BRC), KC_RBRC, KC_TILD, KC_TRNS, KC_TRNS,         KC_PGUP, KC_TRNS, KC_AMPR, KC_EQL, KC_LT, KC_GT, KC_BSLS, KC_TRNS,
-                                       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,         KC_TRNS, KC_DEL, KC_TRNS, KC_DEL
+                                       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,         KC_TRNS, KC_TRNS, KC_TRNS, KC_DEL
     ),
 
 /* Keymap 2: Motion/Function layer *
