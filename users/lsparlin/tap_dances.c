@@ -53,6 +53,10 @@ void dance_ctl_each (qk_tap_dance_state_t *state, void *user_data) {
   else if (state->count == 2 ) {
     register_code(KC_LSFT);
   }
+  else if ( state->count == 3) {
+    unregister_code(KC_LSFT);
+    register_code(KC_LALT);
+  }
 }
 
 void dance_mod_reset (qk_tap_dance_state_t *state, void *user_data) {
