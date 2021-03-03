@@ -31,11 +31,15 @@ enum layer_names {
 #define MOUSE MO(_MOUSE)
 
 #define CT_A  LCTL_T(KC_A)
-#define CT_CM RCTL_T(KC_COMM)
 #define SF_Z  LSFT_T(KC_Z)
-#define SF_SS RSFT_T(KC_SLSH)
 #define AL_X  LALT_T(KC_X)
+#define CT_C  LCTL_T(KC_C)
+#define CM_V  LGUI_T(KC_V)
+
+#define CM_M RGUI_T(KC_M)
+#define CT_CM RCTL_T(KC_COMM)
 #define AL_DT RALT_T(KC_DOT)
+#define SF_SS RSFT_T(KC_SLSH)
 
 #define RA_SP LT(RAISE, KC_SPC)
 #define LW_ESC LT(LOWER, KC_ESC)
@@ -46,22 +50,22 @@ enum layer_names {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_reviung34(
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,          KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
-    CT_A,    KC_S,    KC_D,    NUM_F,    KC_G,          KC_H,    KC_J,    KC_K,    KC_L,    KC_ENT,
-    SF_Z,    AL_X,    KC_C,    KC_V,    KC_B,          KC_N,    KC_M,    CT_CM,   AL_DT,   SF_SS,
+    CT_A,    KC_S,    KC_D,    NUM_F,   KC_G,          KC_H,    KC_J,    KC_K,    KC_L,    KC_ENT,
+    SF_Z,    AL_X,    CT_C,    CM_V,    KC_B,          KC_N,    CM_M,    CT_CM,   AL_DT,   SF_SS,
                       KC_LEAD, MSE_TAB, LW_ESC,        RA_SP
   ),
 
   [_LOWER] = LAYOUT_reviung34(
     KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,       KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
     KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE,       KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_COLN,
-    KC_LSFT, KC_ESC,  KC_LGUI, KC_LALT, KC_QUOT,       KC_QUOT, KC_DQUO, KC_PGUP, KC_PGDN, KC_BSPC,
+    KC_LSFT, KC_LALT, KC_LCTL, KC_LGUI, KC_EQL,        KC_QUOT, KC_DQUO, KC_PGDN, KC_PGUP, KC_BSPC,
                       _______, _______, _______,       _______
   ),
   
   [_RAISE] = LAYOUT_reviung34(
     KC_1,    KC_2,    KC_3,    KC_4,    KC_5,          KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
     KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,       XXXXXXX, XXXXXXX, KC_GRV,  KC_TILD, KC_SCLN,
-    KC_LSFT, KC_ESC,  KC_RGUI, KC_LALT, KC_DQUO,       KC_TAB,  XXXXXXX, KC_RCTL, KC_RALT, KC_DEL,
+    KC_LSFT, KC_LALT, KC_LCTL, KC_LGUI, KC_TAB,        KC_TAB,  KC_RGUI, KC_RCTL, KC_RALT, KC_DEL,
                       _______, _______, _______,       _______
   ),
   
@@ -73,9 +77,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_NUMPAD] = LAYOUT_reviung34(
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        XXXXXXX, KC_KP_7, KC_KP_8, KC_KP_9, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        XXXXXXX, KC_KP_4, KC_KP_5, KC_KP_6, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        XXXXXXX, KC_KP_1, KC_KP_2, KC_KP_3, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        KC_PEQL, KC_KP_7, KC_KP_8, KC_KP_9, KC_PAST,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        KC_PSLS, KC_KP_4, KC_KP_5, KC_KP_6, KC_PMNS,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        KC_PDOT, KC_KP_1, KC_KP_2, KC_KP_3, KC_PPLS,
                       _______, _______, _______,        KC_KP_0
   ),
 
