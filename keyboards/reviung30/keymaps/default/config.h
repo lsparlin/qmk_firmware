@@ -16,18 +16,27 @@
 
 #pragma once
 
+#define TAPPING_TERM 200
+#define IGNORE_MOD_TAP_INTERRUPT
+#define TAPPING_FORCE_HOLD_PER_KEY
+
+#define MK_KINETIC_SPEED
+#define MOUSE_DELAY 0
+#define MOUSEKEY_INTERVAL 16
+
 // place overrides here
 
 #define RGB_DI_PIN D3
 #ifdef RGB_DI_PIN
-  #define RGBLED_NUM 11
+  #define RGBLED_NUM 1
   #define RGBLIGHT_HUE_STEP 16
   #define RGBLIGHT_SAT_STEP 16
   #define RGBLIGHT_VAL_STEP 16
   #define RGBLIGHT_LIMIT_VAL 255 /* The maximum brightness level */
   #define RGBLIGHT_SLEEP  /* If defined, the RGB lighting will be switched off when the host goes to sleep */
+  #define RGBLIGHT_DEFAULT_HUE 150
 // /*== all animations enable ==*/
-  #define RGBLIGHT_ANIMATIONS
+//  #define RGBLIGHT_ANIMATIONS
 // /*== or choose animations ==*/
 //   #define RGBLIGHT_EFFECT_BREATHING
 //   #define RGBLIGHT_EFFECT_RAINBOW_MOOD
